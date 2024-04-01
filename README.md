@@ -83,19 +83,38 @@ mvn archetype:generate -DarchetypeGroupId=no.tornado \
 ### Add TornadoFX to your project
 
 #### Maven
-
 ```xml
-<dependency>
-    <groupId>no.tornado</groupId>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+```xml
+	<dependency>
+    <groupId>com.github.lhDream</groupId>
     <artifactId>tornadofx</artifactId>
-    <version>1.7.20</version>
+    <version>dev-SNAPSHOT</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation 'no.tornado:tornadofx:1.7.20'
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+```groovy
+dependencies {
+    implementation 'com.github.lhDream:tornadofx:dev-SNAPSHOT'
+}
 ```
 
 ### Snapshots are published to Sonatype

@@ -1454,4 +1454,4 @@ fun Parent.stylesheet(op: Stylesheet.() -> Unit) {
 /**
  * Adds the [stylesheet] to the given parent.
  */
-inline fun <T: Stylesheet> Parent.addStylesheet(stylesheet: KClass<T>) = this.stylesheets.add("css://${stylesheet.java.name}")
+fun <T: Stylesheet> Parent.addStylesheet(stylesheet: KClass<T>) = this.stylesheets.add("css://${stylesheet.java.name}")
